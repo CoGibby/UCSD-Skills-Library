@@ -27,16 +27,19 @@ stop. Credentials are managed by the Harness.
 3. Build the meeting batch from accepted calendar events only: map each meeting to a Jira
    issue via a `[KEY-123]` subject prefix or a `Time Tracking: KEY-123` body line; compute
    duration from actual start/end. Include all-day events - focus on the event's acceptance
-   status regardless of whether it has specific times; use the work-day default duration
-   when no explicit start/end is available. Skip declined, tentative, and cancelled events.
-4. For unmatched meetings (no Jira issue code found), recommend SVCOPS-648 as the fallback
-   in the proposal but do not auto-push. Assign the worklog to 648 in the proposal with
-   the meeting subject as the comment, and wait for the user to confirm or redirect to a
+   status; when the event is all-day, use the work-day default duration rather than
+   computing end-minus-start (all-day events carry midnight-boundary timestamps that
+   produce 24-hour deltas per the Microsoft Graph event model). Skip declined, tentative,
+   and cancelled events.
+4. For unmatched meetings (no Jira issue code found), ask the user for their team's
+   catch-all issue once, then reuse it for the session. Recommend it in the proposal but
+   do not auto-push; assign the worklog to the catch-all issue in the proposal with the
+   meeting subject as the comment, and wait for the user to confirm or redirect to a
    different issue before pushing. The user should have the opportunity to add context
    based on their experience.
 5. Propose the meeting batch, then propose worklogs for remaining time from chat evidence,
-   grouped by topic and matched to issues. Never exceed the user's normal daily total unless
-   asked.
+   grouped by topic and matched to issues. Never exceed 480 minutes (8 hours) unless the
+   user explicitly asks.
 6. After the user approves the batch, push the worklogs (respecting the thread's access
    level - with full access, push directly without further prompts) and report the final
    total for the day.

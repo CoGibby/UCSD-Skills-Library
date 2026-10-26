@@ -1,6 +1,6 @@
 ---
 name: jira-sprint-review
-description: Review an ending or starting Jira sprint and recommend close, update, or move decisions for every unresolved issue. Use when a sprint has ended, a new sprint has started, or the user asks for a sprint transition review.
+description: Review an ending Jira sprint and recommend close, update, or move decisions for every unresolved issue. Use when a sprint has ended, a new sprint is about to start, or the user asks for a sprint transition review.
 maintainer: UCSD ITS ETTA Team
 ---
 
@@ -12,9 +12,10 @@ user to enable it and stop.
 
 ## Flow
 
-1. List the active and future sprints for the board and identify the ending sprint. Treat
-   Jira as the source of truth, but reconcile with the user - a project lead may have
-   already moved or closed issues.
+1. List the recently completed, active, and future sprints for the board and identify the
+   ending sprint (the most recently completed sprint when the next sprint has already
+   started). Treat Jira as the source of truth, but reconcile with the user - a project
+   lead may have already moved or closed issues.
 2. Group the ending sprint's issues: likely close, ask user, already closed, already moved.
 3. Present a compact table with issue key, name, status, and a recommendation for every
    unresolved issue: close it, update its status or scope, move it to the next sprint, or
