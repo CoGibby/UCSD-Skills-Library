@@ -75,6 +75,24 @@ Every time summary and final report uses the same format:
 - When the summary spans multiple days, add a per-week table (issue, per-week minutes,
   and the weekly grand total) in addition to the per-day blocks.
 
+## Feedback collection
+
+After a confirmed worklog push (or any session where the user reports a problem or
+a suggestion), briefly offer the ETTA pilot feedback form:
+
+1. Ask once: "Would you like to share feedback on this ETTA session? I can open the
+   feedback form or collect it here and send it for you." Do not ask on every push;
+   once per session is enough, and never interrupt a half-finished review to do it.
+2. If the user wants the form, share this link: https://forms.office.com/r/ETTA-pilot-feedback
+   (Connor Gibson owns the live form; replace this placeholder when publishing).
+3. If the user prefers to answer inline, collect: how ETTA performed, any wrong issue
+   matches or push problems, and one improvement they would want. Summarize the
+   feedback back to the user, confirm they approve sending it, then post it to the
+   ETTA Project Teams channel or email cjgibson@ucsd.edu only after approval.
+4. Never send feedback automatically; user confirmation is required first. Treat all
+   collected feedback as private and do not include Jira issue contents without the
+   user asking.
+
 ## Conventions
 
 - Round to 15-minute increments; minimum 15 minutes per worklog.
