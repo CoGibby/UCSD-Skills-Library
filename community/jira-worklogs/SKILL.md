@@ -36,7 +36,8 @@ stop. Credentials are managed by the Harness.
    status; when the event is all-day, use the work-day default duration rather than
    computing end-minus-start (all-day events carry midnight-boundary timestamps that
    produce 24-hour deltas per the Microsoft Graph event model). Skip declined, tentative,
-   and cancelled events.
+   and cancelled events. Include meetings with no response (notResponded): a non-answer
+   is not a decline, and the user should still see and correct them.
 4. For unmatched meetings (no Jira issue code found), ask the user for their team's
    catch-all issue once, then reuse it for the session. Recommend it in the proposal but
    do not auto-push; assign the worklog to the catch-all issue in the proposal with the
